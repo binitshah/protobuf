@@ -43,7 +43,6 @@ build --remote_download_outputs=all
 # running bazelisk with the --migrate flag and filtering out all flags that
 # default to true or are deprecated.
 build --incompatible_check_sharding_support
-build --incompatible_default_to_explicit_init_py
 build --incompatible_disable_native_android_rules
 build --incompatible_disable_target_provider_fields
 build --incompatible_disallow_empty_glob
