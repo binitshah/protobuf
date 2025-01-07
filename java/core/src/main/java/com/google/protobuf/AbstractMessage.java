@@ -119,6 +119,16 @@ public abstract class AbstractMessage
     return memoizedSize;
   }
 
+  /*
+   * This `equals` maybe invoked by the `equals` method create by gencode if messages have
+   * differing instances of the descriptor, which can be the case for instances of `DynamicMessage`.
+   *
+   * For reasons of backward compatibility, no attempt is made to overcome the fact that
+   * `DynamicMessage` instances may have differing descriptor insances and thus this method may
+   * return false even when the instances are otherwise equal.
+   *
+   * See `message.cc` in the Java protoc compiler for details of the gencode logic.
+   */
   @Override
   public boolean equals(final Object other) {
     if (other == this) {
